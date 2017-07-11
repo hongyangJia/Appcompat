@@ -167,7 +167,7 @@ class AlertController {
             for (Method method : methods) {
                 switch (which) {
                     case DialogInterface.BUTTON_POSITIVE:
-                        findPositivemethod(method);
+                        findPositiveMethod(method);
                         break;
                     case DialogInterface.BUTTON_NEGATIVE:
                         findNegativeMethod(method);
@@ -208,7 +208,7 @@ class AlertController {
             }
         }
 
-        private void findPositivemethod(Method method) {
+        private void findPositiveMethod(Method method) {
             Positive annotations = method.getAnnotation(Positive.class);
             if (annotations != null) {
                 if (annotations.call().equals(mFlag)) {
