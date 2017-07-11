@@ -91,12 +91,6 @@ class AlertController {
         this.mButtonNeutralId = mButtonNeutralId;
     }
 
-    void setAdapter(ListAdapter mAdapter) {
-        Tools.NullPointerException(mAdapter);
-        this.mAdapter = mAdapter;
-        mBuilder.setAdapter(mAdapter, null);
-    }
-
     public void setFlag(CharSequence mId) {
         Tools.NullPointerException(mId);
         this.mId = mId;
@@ -241,7 +235,6 @@ class AlertController {
         @LayoutRes
         int mLayoutResID;
         DialogInterface.OnClickListener mOnClickListener;
-        ListAdapter mAdapter;
 
         AlertParams(Context mContext) {
             this.mContext = mContext;
@@ -258,9 +251,6 @@ class AlertController {
             }
             if (mMessage != null) {
                 dialog.setMessage(mMessage);
-            }
-            if (mAdapter != null) {
-                dialog.setAdapter(mAdapter);
             }
 
             if (mLayoutResID != 0&&mLayoutResID!=-1) {

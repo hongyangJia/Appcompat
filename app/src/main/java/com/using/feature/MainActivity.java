@@ -4,6 +4,7 @@ import android.Manifest;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.feature.annotation.Layout;
+import android.support.feature.annotation.Message;
 import android.support.feature.annotation.Positive;
 import android.support.feature.app.FeatureDialog;
 import android.util.Log;
@@ -13,7 +14,7 @@ import android.widget.AdapterView;
 public class MainActivity extends BaseCompatActivity implements AdapterView.OnItemClickListener {
 
     private static final String TAG= MainActivity.class.getSimpleName();
-    @Layout
+    @Message(title = R.string.app_name)
     private FeatureDialog featureDialog;
 
     @Override
@@ -24,8 +25,11 @@ public class MainActivity extends BaseCompatActivity implements AdapterView.OnIt
         featureDialog.show();
     }
 
-    @Positive()
     private void call() {
+        Log.e(TAG, "call");
+    }
+
+    private void call2() {
         Log.e(TAG, "call");
     }
 
