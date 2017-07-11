@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.feature.annotation.Button;
 import android.support.feature.annotation.Layout;
 import android.support.feature.annotation.Message;
 import android.support.feature.annotation.Positive;
@@ -22,10 +23,11 @@ public class MainActivity extends BaseCompatActivity implements AdapterView.OnIt
     private static final String FEATURE_TAG="featureDialog";
     private static final String LISTVIEW_TAG="listDialog";
 
-    @Layout
+    @Message(title = R.string.app_name,message = R.string.app_name)
+    @Button(mButtonNeutral = R.string.app_name)
     private FeatureDialog featureDialog;
 
-    @Message(title = R.string.app_name,message = R.string.app_name)
+    @Layout
     private FeatureDialog listDialog;
 
     @Layout
@@ -33,15 +35,17 @@ public class MainActivity extends BaseCompatActivity implements AdapterView.OnIt
 
     @Layout(id = R.layout.item)
     private FeatureDialog customizeDialog;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.usingFeatureDialog();
+/*        this.usingFeatureDialog();*/
         //this.usingListDialog();;
+        featureDialog.show();
     }
 
     private void usingFeatureDialog(){
-        featureDialog.show();
+        listDialog.show();
     }
 
     private void usingListDialog(){
